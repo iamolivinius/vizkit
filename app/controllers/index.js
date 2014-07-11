@@ -4,6 +4,7 @@ export default Ember.Controller.extend({
     nodes: [],
     links: [],
     zones: [],
+    pause: false,
 
     init: function() {
         this.socket = io.connect('http://demonstrator.herokuapp.com:80');
@@ -11,10 +12,16 @@ export default Ember.Controller.extend({
         this.socket.on('node_update', this.updatesNodes.bind(this));
     },
 
-    nodesForLineChart: function () {
+    actions: {
+        pause: function() {
+            this.set('pause', !this.get('pause'));
+        }
+    },
+
+    nodesForLineChart: function() {
         var preparedData = [];
 
-        this.nodes.forEach(function (n) {
+        this.nodes.forEach(function(n) {
             var column = [];
             column.pushObject(n.get('name'));
             column.pushObjects(n.get('bandwidthHistory'));
@@ -25,6 +32,10 @@ export default Ember.Controller.extend({
     }.property('nodes.@each.bandwidth'),
 
     updatesNodes: function(data) {
+        if (this.get('pause')) {
+            return;
+        }
+
         data.forEach(function(o) {
             var node = this.nodes.findBy('id', o.id);
             if (node) {
@@ -58,6 +69,10 @@ export default Ember.Controller.extend({
     },
 
     updateLinks: function(data) {
+        if (this.get('pause')) {
+            return;
+        }
+
         data.forEach(function(o) {
             var link = this.links.findBy('id', o.id);
             if (link) {

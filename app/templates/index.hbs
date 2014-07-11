@@ -5,6 +5,13 @@
 <div class="main" vertical layout>
     <div horizontal layout>
         <div class="sidebar" vertical layout>
+            <button class="pure-button" {{action 'pause'}}>
+            {{#if pause}}
+            <i class="fa fa-play"></i> Play
+            {{else}}
+            <i class="fa fa-pause"></i> Pause
+            {{/if}}
+            </button>
             {{#each nodes}}
             <div class="menu-item">
                 <div horizontal layout flex center>
