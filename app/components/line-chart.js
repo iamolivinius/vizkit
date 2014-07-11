@@ -44,7 +44,7 @@ export default Ember.Component.extend({
                     }
                 },
                 subchart: {
-                    show: false
+                    show: true
                 },
                 zoom: {
                     enabled: true
