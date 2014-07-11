@@ -1,0 +1,28 @@
+<div class="toolbar" horizontal layout center>
+    <i class="fa fa-share-alt fa-inverse fa-2x"></i>
+    <h2>Network Visualization Toolkit</h2>
+</div>
+<div class="main" vertical layout>
+    <div horizontal layout>
+        <div class="sidebar" vertical layout>
+            {{#each nodes}}
+            <div class="menu-item">
+                <div horizontal layout flex center>
+                    {{input type="checkbox" checked=isStalling}}
+                    <h4 {{bind-attr class="isStalling"}} flex>{{name}}</h4>
+                    {{sparkline-chart values=bandwidthHistory}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <div class="content" vertical layout flex>
+            <div class="card" flex two>
+                {{network-graph nodes=nodes links=links zones=zones}}
+            </div>
+            <br>
+            <div class="card" flex>
+                {{line-chart data=nodesForLineChart}}
+            </div>
+        </div>
+    </div>
+</div>
