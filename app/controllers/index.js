@@ -10,6 +10,10 @@ export default Ember.Controller.extend({
         this.socket = io.connect('http://demonstrator.herokuapp.com:80');
         this.socket.on('links', this.updateLinks.bind(this));
         this.socket.on('node_update', this.updatesNodes.bind(this));
+
+        Ember.$(document).on('recognised', function () {
+            Ember.$('paper-dialog').get(0).toggle();
+        });
     },
 
     actions: {

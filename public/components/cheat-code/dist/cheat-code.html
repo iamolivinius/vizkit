@@ -1,0 +1,40 @@
+<!-- Import Polymer -->
+<link rel="import" href="../../polymer/polymer.html">
+
+<!-- Define your custom element -->
+<polymer-element name="cheat-code" attributes="pattern">
+
+    <script>
+        Polymer('cheat-code', {
+            position: 0,
+            pattern: [],
+
+            // Fires when an instance of the element is created
+            created: function() {
+                this.pattern = [38, 38, 40, 40, 37, 39, 37, 39, 65, 66];
+            },
+
+            // Fires when the "<polymer-element>" has been fully prepared
+            ready: function() {
+                if (document.addEventListener) {
+                    document.addEventListener('keydown', this.checkInput.bind(this));
+                } else if (document.attachEvent) {
+                    document.attachEvent('onkeydown', this.checkInput.bind(this));
+                }
+            },
+
+            checkInput: function(e) {
+                if (e.keyCode === this.pattern[this.position]) {
+                    this.position++;
+                } else {
+                    this.position = 0;
+                }
+
+                if (this.position === this.pattern.length) {
+                    this.fire('recognised');
+                }
+            }
+        });
+    </script>
+
+</polymer-element>

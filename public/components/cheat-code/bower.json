@@ -1,0 +1,20 @@
+{
+    "name": "cheat-code",
+    "version": "0.0.1",
+    "description": "Custom element to recognize cheat codes in web pages",
+    "license": "MIT",
+    "main": "dist/cheat-code.html",
+    "keywords": [
+        "polymer",
+        "web-components",
+        "cheat-code"
+    ],
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components"
+    ],
+    "dependencies": {
+        "polymer": "~0.3.3"
+    }
+}

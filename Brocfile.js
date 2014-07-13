@@ -6,7 +6,6 @@ var pickFiles = require('broccoli-static-compiler');
 
 var app = new EmberApp();
 
-app.import('vendor/platform/platform.js');
 app.import('vendor/d3/d3.js');
 app.import('vendor/c3/c3.js');
 app.import('vendor/c3/c3.css');

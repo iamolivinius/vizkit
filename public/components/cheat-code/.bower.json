@@ -1,0 +1,31 @@
+{
+  "name": "cheat-code",
+  "version": "0.0.1",
+  "description": "Custom element to recognize cheat codes in web pages",
+  "license": "MIT",
+  "main": "dist/cheat-code.html",
+  "keywords": [
+    "polymer",
+    "web-components",
+    "cheat-code"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "polymer": "~0.3.3"
+  },
+  "homepage": "https://github.com/iamolivinius/cheat-code",
+  "_release": "0.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.0.1",
+    "commit": "16e1727a709f7e97a5422494242d413e92e5b184"
+  },
+  "_source": "git://github.com/iamolivinius/cheat-code.git",
+  "_target": "~0.0.1",
+  "_originalSource": "cheat-code",
+  "_direct": true
+}
