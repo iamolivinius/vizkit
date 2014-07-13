@@ -374,7 +374,7 @@ default Ember.Component.extend({
             this.nodesChanged();
             this.linksChanged();
             this.update();
-        }.bind(this), 250);
+        }.bind(this), 500);
 
         //     // tmpnodes.forEach(function (n) {
         //     //   var parent = n.parentNode;

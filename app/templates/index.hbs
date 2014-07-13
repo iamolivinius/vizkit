@@ -23,11 +23,11 @@
             {{/each}}
         </div>
         <div class="content" vertical layout flex>
-            <div class="card" flex two>
+            <div class="card" flex>
                 {{network-graph nodes=nodes links=links zones=zones}}
             </div>
             <br>
-            <div class="card" flex>
+            <div class="card">
                 {{line-chart data=nodesForLineChart}}
             </div>
         </div>
@@ -38,6 +38,10 @@
 
 <paper-dialog heading="Credits" center>
     <p>Made with love by: </p>
-    <polymer-github-card user="iamolivinius"></polymer-github-card>
+    <div horizontal layout>
+        <polymer-github-card user="iamolivinius"></polymer-github-card>
+        <div class="horizontal-space-20"></div>
+        <polymer-github-card user="m4rcs"></polymer-github-card>
+    </div>
     <paper-button label="Close" affirmative autofocus></paper-button>
 </paper-dialog>
