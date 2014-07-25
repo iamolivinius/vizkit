@@ -80,10 +80,11 @@ export default Ember.Controller.extend({
         data.forEach(function(o) {
             var link = this.links.findBy('id', o.id);
             if (link) {
-                link.setProperties({
-                    source: o.source,
-                    target: o.target
-                });
+                // not needed because API does not send updates for source or target
+                // link.setProperties({
+                //     source: o.source,
+                //     target: o.target
+                // });
             } else {
                 this.links.pushObject(Ember.Object.create(o));
             }

@@ -16,7 +16,7 @@ export default Ember.Component.extend({
                 bindto: '#line-chart',
                 data: {
                     columns: this.data,
-                    type: 'spline'
+                    type: 'line'
                 },
                 legend: {
                     position: 'right'
